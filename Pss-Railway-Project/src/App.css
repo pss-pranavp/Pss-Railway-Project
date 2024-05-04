@@ -1,0 +1,10 @@
+.homepage{
+  display: flex;
+}
+
+.content {
+  width: 100%;
+}
+.post-card {
+  margin: 20px 50px;
+}
