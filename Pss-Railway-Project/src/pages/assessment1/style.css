@@ -1,0 +1,103 @@
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .data-table th, .data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .sub-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
+  }
+
+  body
+  {
+    margin: 20px;
+  }
+  
+  .sub-table th, .sub-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .centered-header {
+    text-align: center;
+  }
+
+  .header-cell {
+    background-color: #a9a9a9; /* Light gray background color */
+    color: #000000; /* Dark text color */
+  }
+
+  .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid black; /* Add a black border around the main table */
+}
+
+.sub-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black; /* Add a black border around the sub-table */
+}
+
+.header-cell {
+  background-color: #ffff00;
+  color: #333;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid black; /* Add a black border around the header cells */
+}
+
+.data-table th,
+.data-table td,
+.sub-table th,
+.sub-table td {
+  border: 1px solid black; /* Add a black border around all cells */
+  padding: 8px;
+  text-align: center;
+}
+
+    
+  /* Add your CSS styles here */
+.centered-header {
+  text-align: center;
+}
+
+.table-container {
+  margin-top: 20px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.sub-table td {
+  padding: 4px;
+}
+
+.buttons-container {
+  margin-top: 20px;
+}
+
+.buttons-container button {
+  margin-right: 10px;
+}

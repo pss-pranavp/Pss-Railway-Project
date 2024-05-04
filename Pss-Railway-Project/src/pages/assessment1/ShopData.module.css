@@ -1,0 +1,170 @@
+.container {
+    margin-left: "55px";
+    margin-right: "55px";
+   
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333333;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tr:hover {
+    background-color: #f0f0f0;
+}
+.heading {
+   display: block;
+   justify-content: space-between;
+   margin-left: 25px;
+    
+}
+
+
+
+
+.button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 9px;
+    cursor: pointer;
+    border-radius: 8px;
+    
+    
+}
+
+.button:hover {
+    background-color: #45a049; /* Darker Green */
+}
+
+.button2 {
+    background-color: #614caf; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 9px;
+    cursor: pointer;
+    border-radius: 8px;
+    
+    
+}
+
+
+/* shopstyle.module.css */
+
+/* ShopData.module.css */
+
+/* ShopData.module.css */
+
+/* Modal Overlay */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Modal Container */
+  .modalContainer {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  /* Modal Header */
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Modal Title */
+  .modalTitle {
+    margin: 0;
+  }
+  
+  /* Close Button */
+  .closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 20px;
+    color: #888;
+  }
+  
+  .closeButton:hover {
+    color: #555;
+  }
+  
+  /* Modal Body */
+  .modalBody {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Form Group */
+  .formGroup {
+    width: 50%;
+    padding: 5px 0;
+  }
+  
+  /* Form Label */
+  .formLabel {
+    font-weight: bold;
+  }
+  
+  /* Form Control */
+  .formControl {
+    width: calc(100% - 10px);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Modal Footer */
+  .modalFooter {
+    padding: 10px 20px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
