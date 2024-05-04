@@ -1,0 +1,338 @@
+{
+  "Shopdata": [
+    {
+      "id": "1",
+      "Date": "05/12/2023",
+      "ShopNo": "12.23.6504816T",
+      "Structure": 881,
+      "StructureNo": "881.0 , 881.3",
+      "Roadgauge": 1602,
+      "pro_s": 294,
+      "ESKName": "Gmm"
+    },
+    {
+      "id": "2",
+      "Date": "06/12/2023",
+      "ShopNo": "12.23.549936T",
+      "Structure": 863,
+      "StructureNo": "863.0, 862.7",
+      "Roadgauge": 1600,
+      "pro_s": 28,
+      "ESKName": "Gmm"
+    },
+    {
+      "id": "3",
+      "Date": "05/12/2023",
+      "ShopNo": "12.436504816T",
+      "Structure": 881,
+      "StructureNo": "881.0 , 881.3",
+      "Roadgauge": 1602,
+      "pro_s": 294,
+      "ESKName": "GMM"
+    },
+    {
+      "id": "4",
+      "Date": "05/12/2023",
+      "ShopNo": "12.436504816T",
+      "Structure": 881,
+      "StructureNo": "881.0 , 881.3",
+      "Roadgauge": 1602,
+      "pro_s": 294,
+      "ESKName": "GMM"
+    },
+    {
+      "id": "5",
+      "Date": "05/12/2023",
+      "ShopNo": "12.436504816T",
+      "Structure": 881,
+      "StructureNo": "881.0 , 881.3",
+      "Roadgauge": 1602,
+      "pro_s": 294,
+      "ESKName": "GMM"
+    },
+    {
+      "id": "6",
+      "Date": "05/12/2023",
+      "ShopNo": "12.436504816T",
+      "Structure": 881,
+      "StructureNo": "881.0 , 881.3",
+      "Roadgauge": 1602,
+      "pro_s": 294,
+      "ESKName": "GMM"
+    },
+    {
+      "id": "7",
+      "Date": "05/12/2023",
+      "ShopNo": "12.436504816T",
+      "Structure": 881,
+      "StructureNo": "881.0 , 881.3",
+      "Roadgauge": 1602,
+      "pro_s": 294,
+      "ESKName": "GMM"
+    },
+    {
+      "id": "8",
+      "Date": "05/12/2023",
+      "ShopNo": "12.436504816T",
+      "Structure": 881,
+      "StructureNo": "881.0 , 881.3",
+      "Roadgauge": 1602,
+      "pro_s": 294,
+      "ESKName": "GMM"
+    },
+    {
+      "id": "9",
+      "Date": "05/12/2023",
+      "ShopNo": "12.436504816T",
+      "Structure": 881,
+      "StructureNo": "881.0 , 881.3",
+      "Roadgauge": 1602,
+      "pro_s": 294,
+      "ESKName": "GMM"
+    },
+    {
+      "id": "10",
+      "Date": "05/12/2023",
+      "ShopNo": "12.436504816T",
+      "Structure": 881,
+      "StructureNo": "881.0 , 881.3",
+      "Roadgauge": 1602,
+      "pro_s": 294,
+      "ESKName": "GMM"
+    }
+  ],
+  "WheelData": [
+    {
+      "id": "1",
+      "shopsr": "y00001",
+      "axieData": {
+        "axieNo": "RWF 2022 sk m4 438",
+        "axieDiameter": "TB-T",
+        "axieRodGauge": "44-sm",
+        "axieBDmake": "HDM21",
+        "axieBDcondition": "106122",
+        "axieTypeOfRepaire": "",
+        "axieCTRBdetail": "",
+        "axiematugaRemark": ""
+      },
+      "wheelPositionData": [
+        {
+          "wheelPositionDataOne": {
+            "wheelName": "N3",
+            "wheelDiameter": "934",
+            "wheelRodGauge": "1601",
+            "wheelBDmake": "knor",
+            "wheelBDcondition": "thermal crack both side",
+            "wheelTypeOfRepaire": "TT",
+            "wheelCTRBdetail": "NO Garage leakage no bearing sound no seal dent or smudging observed",
+            "wheelmatugaRemark": ""
+          },
+          "wheelPositionDataTwo": {
+            "wheelName": "N6",
+            "wheelDiameter": "933",
+            "wheelRodGauge": "1601",
+            "wheelBDmake": "knor",
+            "wheelBDcondition": "",
+            "wheelTypeOfRepaire": "TT",
+            "wheelCTRBdetail": "",
+            "wheelmatugaRemark": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "shopsr": "y00001",
+      "axieData": {
+        "axieNo": "RWF 2022 sk m4 438",
+        "axieDiameter": "TB-T",
+        "axieRodGauge": "44-sm",
+        "axieBDmake": "HDM21",
+        "axieBDcondition": "106122",
+        "axieTypeOfRepaire": "",
+        "axieCTRBdetail": "",
+        "axiematugaRemark": ""
+      },
+      "wheelPositionData": [
+        {
+          "wheelPositionDataOne": {
+            "wheelName": "N3",
+            "wheelDiameter": "934",
+            "wheelRodGauge": "1601",
+            "wheelBDmake": "knor",
+            "wheelBDcondition": "thermal crack both side",
+            "wheelTypeOfRepaire": "TT",
+            "wheelCTRBdetail": "NO Garage leakage no bearing sound no seal dent or smudging observed",
+            "wheelmatugaRemark": ""
+          },
+          "wheelPositionDataTwo": {
+            "wheelName": "N6",
+            "wheelDiameter": "933",
+            "wheelRodGauge": "1601",
+            "wheelBDmake": "knor",
+            "wheelBDcondition": "",
+            "wheelTypeOfRepaire": "TT",
+            "wheelCTRBdetail": "",
+            "wheelmatugaRemark": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "shopsr": "y00001",
+      "axieData": {
+        "axieNo": "RWF 2022 sk m4 438",
+        "axieDiameter": "TB-T",
+        "axieRodGauge": "44-sm",
+        "axieBDmake": "HDM21",
+        "axieBDcondition": "106122",
+        "axieTypeOfRepaire": "",
+        "axieCTRBdetail": "",
+        "axiematugaRemark": ""
+      },
+      "wheelPositionData": [
+        {
+          "wheelPositionDataOne": {
+            "wheelName": "N3",
+            "wheelDiameter": "934",
+            "wheelRodGauge": "1601",
+            "wheelBDmake": "knor",
+            "wheelBDcondition": "thermal crack both side",
+            "wheelTypeOfRepaire": "TT",
+            "wheelCTRBdetail": "NO Garage leakage no bearing sound no seal dent or smudging observed",
+            "wheelmatugaRemark": ""
+          },
+          "wheelPositionDataTwo": {
+            "wheelName": "N6",
+            "wheelDiameter": "933",
+            "wheelRodGauge": "1601",
+            "wheelBDmake": "knor",
+            "wheelBDcondition": "",
+            "wheelTypeOfRepaire": "TT",
+            "wheelCTRBdetail": "",
+            "wheelmatugaRemark": ""
+          }
+        }
+      ]
+    }
+  ],
+  "offWeelData": [
+    {
+      "id": "1",
+      "Date": "05/12/2023",
+      "ShoOperratorTNo": "Vimal",
+      "InspectorT": 1,
+      "ShopSNo": "20-01-2024 73405",
+      "TypeofWheel": "ICF-13T",
+      "WheelPressedofffor": "RA/RD",
+      "DiscSrNo": "",
+      "Generalobservations": "PR-06745",
+      "Remarks": "01-04 73292 11-01-24"
+    },
+    {
+      "id": "2",
+      "Date": "05/12/2023",
+      "ShoOperratorTNo": "Vimal",
+      "InspectorT": 1,
+      "ShopSNo": "20-01-2024 73405",
+      "TypeofWheel": "ICF-13T",
+      "WheelPressedofffor": "RA/RD",
+      "DiscSrNo": "",
+      "Generalobservations": "PR-06745",
+      "Remarks": "01-04 73292 11-01-24"
+    },
+    {
+      "id": "3",
+      "Date": "05/12/2023",
+      "ShoOperratorTNo": "Vimal",
+      "InspectorT": 1,
+      "ShopSNo": "20-01-2024 73405",
+      "TypeofWheel": "ICF-13T",
+      "WheelPressedofffor": "RA/RD",
+      "DiscSrNo": "",
+      "Generalobservations": "PR-06745",
+      "Remarks": "01-04 73292 11-01-24"
+    },
+    {
+      "id": "4",
+      "Date": "05/12/2023",
+      "ShoOperratorTNo": "Vimal",
+      "InspectorT": 1,
+      "ShopSNo": "20-01-2024 73405",
+      "TypeofWheel": "ICF-13T",
+      "WheelPressedofffor": "RA/RD",
+      "DiscSrNo": "",
+      "Generalobservations": "PR-06745",
+      "Remarks": "01-04 73292 11-01-24"
+    },
+    {
+      "id": "677d",
+      "Date": "",
+      "ShoOperratorTNo": "",
+      "InspectorT": "",
+      "ShopSNo": "",
+      "TypeofWheel": "",
+      "WheelPressedofffor": "",
+      "DiscSrNo": "",
+      "AxleNo": "",
+      "Reason": "",
+      "Remarks": ""
+    },
+    {
+      "id": "d625",
+      "Date": "2024-04-18",
+      "ShoOperratorTNo": "",
+      "InspectorT": "111",
+      "ShopSNo": "5555",
+      "TypeofWheel": "555",
+      "WheelPressedofffor": "555",
+      "DiscSrNo": "555",
+      "AxleNo": "",
+      "Reason": "",
+      "Remarks": "555",
+      "OperatorTNo": "5555"
+    },
+    {
+      "id": "9b14",
+      "Date": "2024-04-18",
+      "ShoOperratorTNo": "",
+      "InspectorT": "111",
+      "ShopSNo": "5555",
+      "TypeofWheel": "555",
+      "WheelPressedofffor": "555",
+      "DiscSrNo": "555",
+      "AxleNo": "",
+      "Reason": "",
+      "Remarks": "555",
+      "OperatorTNo": "5555"
+    },
+    {
+      "id": "e82e",
+      "Date": "2024-05-03",
+      "ShoOperratorTNo": "",
+      "InspectorT": "4655",
+      "ShopSNo": "3443",
+      "TypeofWheel": "ITG-321",
+      "WheelPressedofffor": "RD",
+      "DiscSrNo": "",
+      "AxleNo": "",
+      "Reason": "",
+      "Remarks": "11-65-66",
+      "OperatorTNo": "rohan"
+    },
+    {
+      "id": "77d0",
+      "Date": "",
+      "ShoOperratorTNo": "",
+      "InspectorT": "",
+      "ShopSNo": "",
+      "TypeofWheel": "",
+      "WheelPressedofffor": "",
+      "DiscSrNo": "",
+      "AxleNo": "",
+      "Reason": "",
+      "Remarks": ""
+    }
+  ]
+}
