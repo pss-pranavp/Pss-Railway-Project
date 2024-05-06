@@ -17,7 +17,7 @@
   .sub-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 5px;
+    /* margin-top: 5px; */
   }
 
   body
@@ -76,7 +76,7 @@
 }
 
 .table-container {
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .data-table {
@@ -95,7 +95,7 @@
 }
 
 .buttons-container {
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .buttons-container button {
