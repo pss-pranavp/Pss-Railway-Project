@@ -14,7 +14,7 @@ const db = mysql.createConnection({
     database: "railwaydb"
 });
 
-app.options("/", (req, res) => {
+app.options("/pressedoffwheels", (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "POST");
     res.header("Access-Control-Allow-Headers", "Content-Type");
@@ -22,7 +22,7 @@ app.options("/", (req, res) => {
 });
 
 
-app.post('/', async (req, res) => {
+app.post("/pressedoffwheels", async (req, res) => {
     console.log("Received POST request:", req.body);
     const sql = "INSERT INTO pressedoffwheels (`Date`, `ShoOperratorTNo`, `InspectorT`, `ShopSNo`, `TypeofWheel`, `WheelPressedofffor`, `DiscSrNo`, `AxleNo`, `Reason`, `Remarks`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     const values = [req.body.Date, req.body.ShoOperratorTNo, req.body.InspectorT, req.body.ShopSNo, req.body.TypeofWheel, req.body.WheelPressedofffor, req.body.DiscSrNo, req.body.AxleNo, req.body.Reason, req.body.Remarks];
@@ -34,8 +34,20 @@ app.post('/', async (req, res) => {
 });
 
 
-app.get("/", (req, res) => {
+app.get("/pressedoffwheels", (req, res) => {
     const sql = "SELECT * FROM pressedoffwheels";
+    db.query(sql, (err, data) => {
+        if (err) {
+            console.error("Error executing SQL query:", err);
+            return res.status(500).json({ error: "An error occurred while fetching data." });
+        }
+        return res.json(data);
+    });
+});
+
+
+app.get("/users", (req, res) => {
+    const sql = "SELECT * FROM users";
     db.query(sql, (err, data) => {
         if (err) {
             console.error("Error executing SQL query:", err);

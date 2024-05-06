@@ -26,7 +26,7 @@ const WheelSheet = () => {
  console.log(wheeldata);
 
  return (
-  <div className={styles.container}>
+  <div className={styles.container} style={{position:"relative" , left:"300px" , width:"1200px" ,height:"1500px" , bottom:"250px" }}>
    <h2 className={styles.heading}>Wheel Pre-Inspection Sheet "Vande Bharat"</h2>
    <div className={styles.tableContainer}>
     <div>

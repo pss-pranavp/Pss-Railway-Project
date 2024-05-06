@@ -1,94 +1,328 @@
-npm install json-server --save-dev
-
-
-import React, { useEffect, useState } from 'react';
-import styles from './WheelSheet.module.css';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import './style.css';
 import { downloadPDF } from '../../component/common/DownLoadPdf';
-import { exportToExcelWithFlatData } from '../../component/common/ExportExcel';
+import { exportToExcel } from '../../component/common/ExportExcel';
 import { printTable } from '../../component/common/Print';
+import shopstyle from './ShopData.module.css';
+import axios from 'axios';
 
-const WheelSheet = () => {
-  const [wheeldata, setWheelData] = useState([]);
-  const [newData, setNewData] = useState({
-    shopsr: '',
-    axieData: {
-      axieNo: '',
-      axieDiameter: '',
-      axieRodGauge: '',
-      axieBDmake: '',
-      axieBDcondition: ''
-    },
-    wheelPositionData: []
+
+
+const DetailedRecordOfPressedOffWheels = () => {
+  const [pressedoffwheels, setPressedOffWheels] = useState([]);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [formData, setFormData] = useState({
+    Date: '',
+    ShoOperratorTNo: '',
+    InspectorT: '',
+    ShopSNo: '',
+    TypeofWheel: '',
+    WheelPressedofffor: '',
+    DiscSrNo: '',
+    AxleNo: '',
+    Reason: '',
+    Remarks: ''
+  });
+  const [showModal, setShowModal] = useState(false);
+  const [validationErrors, setValidationErrors] = useState({
+    ShoOperratorTNo: '',
+    InspectorT: '',
+    shopNo:'',
+    WheelPress:'',
+    wheelPressed:'',
+    DiscNo:'',
+    axlNo:'',
+    reason:'',
+    remark:''
+
+
+
+   
   });
 
   useEffect(() => {
-    fetchData();
+    axios.get('http://localhost:8081/pressedoffwheels')
+      .then(res => setPressedOffWheels(res.data))
+      .catch(err => console.log(err));
   }, []);
 
-  const fetchData = () => {
-    axios.get("http://localhost:8888/WheelData")
+  function validateOperatorNo(operatorNo) {
+    return /^[a-zA-Z0-9\s]+$/.test(operatorNo);
+  }
+  
+  function validateInspectorNo(inspectorNo) {
+    return /^[a-zA-Z0-9\s]+$/.test(inspectorNo);
+  }
+  function validateShopNo(operatorNo) {
+    return /^[a-zA-Z0-9\s]+$/.test(operatorNo);
+  }
+  
+  function validateTypeOfWheel(inspectorNo) {
+    return /^[a-zA-Z0-9\s]+$/.test(inspectorNo);
+  }
+  function validateWhelPressed(operatorNo) {
+    return /^[a-zA-Z0-9\s]+$/.test(operatorNo);
+  }
+  
+  function validateDiskSrNo(inspectorNo) {
+    return /^[a-zA-Z0-9\s]+$/.test(inspectorNo);
+  }
+  function validateAxleNo(operatorNo) {
+    return /^[a-zA-Z0-9\s]+$/.test(operatorNo);
+  }
+  
+  function validaterReason(inspectorNo) {
+    return /^[a-zA-Z0-9\s]+$/.test(inspectorNo);
+
+  }function validateRemark(operatorNo) {
+    return /^[a-zA-Z0-9\s]+$/.test(operatorNo);
+  }
+  
+  function handleSubmit(event) {
+    event.preventDefault();
+    // Validate each form field
+    // const isDateValid = validateDate(formData.Date);
+    const isOperatorNoValid = validateOperatorNo(formData.ShoOperratorTNo);
+    const isInspectorNoValid = validateInspectorNo(formData.InspectorT);
+    const isShopNoValid = validateShopNo(formData.ShopSNo);
+    const isTypeOffWhellNoValid = validateTypeOfWheel(formData.TypeofWheel);
+    const isWheelPreesedNoValid = validateWhelPressed(formData.WheelPressedofffor);
+    const isDiskSrNoValid = validateDiskSrNo(formData.DiscSrNo);
+    const isAxlNoValid = validateAxleNo(formData.AxleNo);
+    const isIReasonNoValid = validaterReason(formData.Reason);
+    const isIRemarkNoValid = validateRemark(formData.Remarks);
+
+
+
+    setValidationErrors({
+      ShoOperratorTNo: isOperatorNoValid ? '' : 'Please enter a valid operator number.',
+      InspectorT: isInspectorNoValid ? '' : 'Please enter a valid inspector number.',
+      shopNo: isShopNoValid ? '' : 'Please enter a valid Shop number.',
+      WheelPress: isTypeOffWhellNoValid ? '' : 'Please enter a valid WheelPress number.',
+      wheelPressed: isWheelPreesedNoValid ? '' : 'Please enter a valid WheelPreesedNo .',
+      DiscNo: isDiskSrNoValid ? '' : 'Please enter a valid Disknumber.',
+      axlNo: isAxlNoValid ? '' : 'Please enter a valid axl number.',
+      reason: isIReasonNoValid ? '' : 'Please enter a valid reason.',
+      remark: isIRemarkNoValid ? '' : 'Please enter a valid remark.'
+    });
+    
+     // Check if any validation fails
+  if ( !isOperatorNoValid || !isInspectorNoValid || isShopNoValid || isTypeOffWhellNoValid || isWheelPreesedNoValid || isDiskSrNoValid || isAxlNoValid || isIReasonNoValid || isIRemarkNoValid) {
+    // alert("Please enter valid input.");
+    return;
+  }
+    axios.post('http://localhost:8081/pressedoffwheels', formData)
       .then((res) => {
-        setWheelData(res.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  };
+        console.log(res);
+        //Optionally, reset the form data
+        setFormData({
+          Date: '',
+          ShoOperratorTNo: '',
+          InspectorT: '',
+          ShopSNo: '',
+          TypeofWheel: '',
+          WheelPressedofffor: '',
+          DiscSrNo: '',
+          AxleNo: '',
+          Reason: '',
+          Remarks: ''
+        });
+        setShowModal(false);
 
-  const handleAddData = () => {
-    setWheelData([...wheeldata, newData]);
-    setNewData({
-      shopsr: '',
-      axieData: {
-        axieNo: '',
-        axieDiameter: '',
-        axieRodGauge: '',
-        axieBDmake: '',
-        axieBDcondition: ''
-      },
-      wheelPositionData: []
-    });
-  };
+        setShowSuccessMessage(true);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNewData({
-      ...newData,
-      [name]: value
-    });
-  };
+        // Fetch the updated data after successful form submission
+        axios.get('http://localhost:8081/pressedoffwheels')
+          .then(res => setPressedOffWheels(res.data))
 
-  console.log(wheeldata);
+          .catch(err => console.log(err));
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+        }, 3000);
+      }).catch((err) => console.log(err));
+  }
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.heading}>Wheel Pre-Inspection Sheet "Vande Bharat"</h2>
-      <div className={styles.tableContainer}>
+    <div style={{ position: "relative", left: "300px", width: "1200px", height: "1500px", bottom: "250px" }}>
+      <div id="table-container" className="table-container p-4" style={{ position: "relative", overflow: "auto" }}>
+
         <div>
-          <button className={styles.button} onClick={() => downloadPDF('wheel-table', 'wheeldata.pdf')}>Download as PDF</button>
-          <button className={styles.button} onClick={() => exportToExcelWithFlatData(wheeldata, 'wheeldata.xlsx')}>Export to Excel</button>
-          <button className={styles.button} onClick={printTable}>Print</button>
+          <button className={shopstyle.button} onClick={() => downloadPDF('shop-table', 'whelldata.pdf')}>Download as PDF</button>
+          <button className={shopstyle.button} onClick={() => exportToExcel(pressedoffwheels, 'pressedoffwheels.xlsx')}>Export to Excel</button>
+          <button className={shopstyle.button} onClick={printTable}>Print</button>
+          <button className={shopstyle.button2} onClick={() => setShowModal(true)}>Add Data</button>
         </div>
-        <table id="wheel-table" className={styles.table}>
+        <table id='shop-table' className="data-table" >
+
+          <thead >
+            <tr>
+              <th colSpan={9} style={{ fontSize: "20px" }} >  Detailed Record Of Pressed Off Wheels</th>
+            </tr>
+            <tr>
+              <th className="header-cell">Date</th>
+              <th className="header-cell">Operator T.No.</th>
+              <th className="header-cell">Inspector T.No.</th>
+              <th className="header-cell">Shop S.No.</th>
+              <th className="header-cell">Type of Wheel</th>
+              <th className="header-cell">Wheel Pressed off for RA/RD/RG</th>
+              <th className="header-cell">Disc Sr.No.</th>
+              <th className="header-cell">General observations
+                <table className="sub-table">
+                  <thead>
+                    <tr>
+                      <th>Axle No.</th>
+                      <th>Reason</th>
+                    </tr>
+                  </thead>
+                </table>
+              </th>
+              <th className="header-cell">Remarks</th>
+              {/* <th className="header-cell">Action</th> */}
+            </tr>
+          </thead>
           <tbody>
-            {wheeldata.map((data, index) => (
-              <React.Fragment key={index}>
-                {/* Your existing table rows */}
-              </React.Fragment>
-            ))}
+            {
+              pressedoffwheels.map((data, i) => (
+                <tr key={i}>
+                  <td>{data.Date}</td>
+                  <td>{data.ShoOperratorTNo}</td>
+                  <td>{data.InspectorT}</td>
+                  <td>{data.ShopSNo}</td>
+                  <td>{data.TypeofWheel}</td>
+                  <td>{data.WheelPressedofffor}</td>
+                  <td>{data.DiscSrNo}</td>
+                  <td>
+                    <table className="sub-table">
+                      <tbody>
+                        <tr>
+                          <td>{data.AxleNo}</td>
+                          <td>{data.Reason}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>{data.Remarks}</td>
+                </tr>
+              ))}
           </tbody>
         </table>
-        <div>
-          {/* Input fields for adding new data */}
-          <input type="text" name="shopsr" placeholder="Shop Sr No" value={newData.shopsr} onChange={handleInputChange} />
-          {/* Add more input fields for other properties */}
-          <button onClick={handleAddData}>Add Data</button>
-        </div>
       </div>
+
+      {showModal && (
+        <div className={shopstyle.modalOverlay} onClick={() => setShowModal(false)}>
+          <div className={shopstyle.modalContainer} onClick={(e) => e.stopPropagation()}>
+            <div style={{ backgroundColor: "blue" }} className={shopstyle.modalHeader}>
+              <h3 className={shopstyle.modalTitle}>Add Data</h3>
+              <button type="button" className={shopstyle.closeButton} onClick={() => setShowModal(false)}>
+                <span style={{ fontWeight: "bold", fontSize: "45px", color: "black" }} aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {/* <div className={shopstyle.modalBody}> */}
+            <form onSubmit={handleSubmit} className={shopstyle.modalBody}>
+              {/* <h2>Add Data</h2> */}
+              <div className={shopstyle.formGroup}>
+                <label className={shopstyle.formLabel}>Date</label>
+                <input className={shopstyle.formControl} type='date' name='Date'
+                   onChange={(e) => setFormData({ ...formData, Date: e.target.value })}
+                />
+              </div>
+              <div className={shopstyle.formGroup}>
+                <label className={shopstyle.formLabel}>Operator No</label>
+                <input className={shopstyle.formControl} type='text' name='Operator No'
+                   onChange={(e) => setFormData({ ...formData, ShoOperratorTNo: e.target.value })}
+                />
+                 {validationErrors.ShoOperratorTNo && <div className="error">{validationErrors.ShoOperratorTNo}</div>}
+              </div>
+              <div className={shopstyle.formGroup}>
+                <label className={shopstyle.formLabel} >Inspector No</label>
+                <input className={shopstyle.formControl} type='text' name='Inspector No'
+                   onChange={(e) => setFormData({ ...formData, InspectorT: e.target.value })}
+                />
+                  {validationErrors.InspectorT && <div className="error">{validationErrors.InspectorT}</div>}
+              </div>
+
+              <div className={shopstyle.formGroup}>
+                <label className={shopstyle.formLabel} >Shop SNo</label>
+                <input className={shopstyle.formControl} type='text' name='Shop SNo'
+                   onChange={(e) => setFormData({ ...formData, ShopSNo: e.target.value })}
+                />
+                {validationErrors.shopNo && <div className="error">{validationErrors.shopNo}</div>}
+              </div>
+
+              <div className={shopstyle.formGroup}>
+                <label className={shopstyle.formLabel} >TypeofWheel</label>
+                <input className={shopstyle.formControl} type='text' name='Type of Wheel'
+                   onChange={(e) => setFormData({ ...formData, TypeofWheel: e.target.value })}
+                />
+                {validationErrors.TypeofWheel && <div className="error">{validationErrors.TypeofWheel}</div>}
+              </div>
+
+              <div className={shopstyle.formGroup}>
+                <label className={shopstyle.formLabel} >WheelPressedofffor</label>
+                <input className={shopstyle.formControl} type='text' name='Wheel Pressed off for'
+                   onChange={(e) => setFormData({ ...formData, WheelPressedofffor: e.target.value })}
+                />
+                {validationErrors.WheelPress && <div className="error">{validationErrors.WheelPress}</div>}
+              </div>
+
+              <div className={shopstyle.formGroup}>
+                <label className={shopstyle.formLabel} >Disc No</label>
+                <input className={shopstyle.formControl} type='text' name='Disc No'
+                   onChange={(e) => setFormData({ ...formData, DiscSrNo: e.target.value })}
+                />
+                {validationErrors.DiscNo && <div className="error">{validationErrors.DiscNo}</div>}
+              </div>
+
+              <div className={shopstyle.formGroup}>
+                <label className={shopstyle.formLabel} >Axle No</label>
+                <input className={shopstyle.formControl} type='text' name='Axle No'
+                   onChange={(e) => setFormData({ ...formData, AxleNo: e.target.value })}
+                />
+                {validationErrors.axlNo && <div className="error">{validationErrors.axlNo}</div>}
+              </div>
+
+              <div className={shopstyle.formGroup}>
+                <label className={shopstyle.formLabel} >Reason</label>
+                <input className={shopstyle.formControl} type='text' name='Reason'
+                   onChange={(e) => setFormData({ ...formData, Reason: e.target.value })}
+                />
+                {validationErrors.reason && <div className="error">{validationErrors.reason}</div>}
+              </div>
+
+              <div className={shopstyle.formGroup}>
+                <label className={shopstyle.formLabel} >Remarks</label>
+                <input className={shopstyle.formControl} type='text' name='Remarks'
+                   onChange={(e) => setFormData({ ...formData, Remarks: e.target.value })}
+                />
+                {validationErrors.remark && <div className="error">{validationErrors.remark}</div>}
+              </div>
+              <div className={shopstyle.formGroup}>
+                <button type='submit' className='btn btn-success'>Submit</button>
+              </div>
+             
+            
+            </form>
+            {/* </div> */}
+          </div>
+        </div>
+
+
+
+      )}
+
+      {/* Modal for adding data */}
+      {showSuccessMessage && (
+        <div className="position-fixed top-0 start-50 translate-middle-x" style={{ zIndex: 1050 }}>
+          <div className="alert alert-success alert-dismissible fade show" role="alert">
+            Data added successfully!
+            <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close" onClick={() => setShowSuccessMessage(false)}></button>
+          </div>
+        </div>
+      )}
+
     </div>
+
   );
 }
 
-export default WheelSheet;
-
+export default DetailedRecordOfPressedOffWheels;

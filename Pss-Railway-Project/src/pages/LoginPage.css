@@ -1,0 +1,68 @@
+/* Additional CSS for styling the login form */
+
+/* Form styles */
+
+.login-container {
+  margin-left: 500px;
+  margin-top: 110px;
+}
+.form-signin {
+    max-width: 450px; /* Adjust as needed */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input styles */
+  .form-control {
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .icon {
+text-align: center;
+font-size: 25px;
+  }
+  /* Button styles */
+  .btn-primary {
+    margin-top: 10px;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Checkbox styles */
+  .form-check-input[type="checkbox"] {
+    margin-top: 0.25rem;
+  }
+  
+  /* Logo styles */
+  .mb-4 {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Title styles */
+  .h3 {
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Label styles */
+  .form-floating label {
+    color: #777;
+  }
+  
+  /* Footer text styles */
+  .text-body-secondary {
+    color: #777;
+    text-align: center;
+  }
+  

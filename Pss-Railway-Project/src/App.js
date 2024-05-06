@@ -1,28 +1,26 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from "./pages/DashBoard";
-import ShopData from "./pages/assessment1/ShopData";
-import WheelSheet from "./pages/assessment2/WheelSheet";
-
 import DetailedRecordOfPressedOffWheels from './pages/assessment1/DetailedRecordOfPressedOffWheels';
+import WheelSheet from "./pages/assessment2/WheelSheet";
+import LoginPage from './pages/LoginPage';
+// import DashboardMechanical from './pages/DashboardMechanical';
+
 function App() {
-  const [selectedTab, setSelectedTab] = useState("home"); 
-  
-  
-  // export default data;
-  
   return (
-    <div className="homepage">
-      <Dashboard
-        selectedTab={selectedTab}
-        setSelectedTab={setSelectedTab}
-      />
-      {selectedTab === "home" ? (
-       <DetailedRecordOfPressedOffWheels/>
-      ) : (
-        <WheelSheet />
-      )}
-     
+    <div>
+      <Router>
+        <div className="App" data-testid="AppWrapper">
+          <Routes>
+            <Route path="" element={<LoginPage />} />
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route path="" element={<DetailedRecordOfPressedOffWheels />} />
+              <Route path="wheelSheet" element={<WheelSheet/>} />
+            </Route>
+          </Routes>
+        </div>
+      </Router>
     </div>
   );
 }
